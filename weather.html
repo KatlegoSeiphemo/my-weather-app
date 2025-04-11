@@ -104,6 +104,7 @@
             text-decoration: underline;
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
@@ -142,11 +143,10 @@
 
         <footer>
             This lovely project was coded with ❤️ by <strong>Katlego Seiphemo</strong>. 
-          
         </footer>
     </div>
     <script>
-        const apiKey = "YOUR_API_KEY"; // Replace with your OpenWeatherMap API key
+        const apiKey = "YOUR_API_KEY"; // Replace with your actual OpenWeatherMap API key
 
         document.getElementById('search-form').addEventListener('submit', function(event) {
             event.preventDefault();
