@@ -1,0 +1,119 @@
+.container {
+    margin: 20px auto;
+    max-width: 600px;
+    font-family: Arial, sans-serif; /* Changed to a more modern font */
+}
+
+.weather-app {
+    background: radial-gradient(
+        circle at 10% 20%,
+        rgb(251, 222, 238) 15.6%, /* Light pink */
+        rgb(206, 201, 226) 80.3% /* Light lavender */
+    );
+    padding: 20px; /* Increased padding for a spacious feel */
+    border-radius: 20px; /* More rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+p {
+    font-size: 14px; /* Increased font size for readability */
+    color: #333; /* Darker text color for better contrast */
+}
+
+small {
+    font-family: 'Courier New', monospace; /* A more recognizable monospace font */
+    color: #666; /* Slightly lighter color for small text */
+}
+
+.fa-search {
+    font-size: 24px; /* Slightly larger search icon */
+    color: #6088c9; /* Matches the theme color */
+}
+
+.city {
+    margin: 0;
+    margin-top: 40px; /* Reduced top margin */
+    font-size: 36px; /* Larger font size for visibility */
+    font-family: Arial, sans-serif; /* Changed for consistency */
+    color: #2c3e50; /* Darker color for city name */
+}
+
+#currentDate {
+    font-size: 16px; /* Increased font size */
+    padding-top: 0px;
+    font-family: Arial, sans-serif; /* Changed for consistency */
+}
+
+#currentTime {
+    font-size: 18px; /* Slightly larger for emphasis */
+    color: #2c3e50; /* Darker color for better readability */
+}
+
+.mb-2 {
+    background-color: white;
+    color: black;
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.mb-2:hover {
+    background-color: #ffe5b4; /* Soft yellow on hover */
+    border-color: white;
+}
+
+.number {
+    font-size: 80px;
+    color: #f36f6f; /* Bright color for temperature */
+    margin-bottom: 10px; /* Adjusted to space out from the text below */
+}
+
+.temp {
+    text-align: right;
+}
+
+.fa-sun {
+    font-size: 30px;
+    color: #f4cc5d; /* Sun icon color */
+}
+
+.fa-cloud-sun-rain {
+    font-size: 30px;
+    color: #6088c9; /* Cloud sun rain icon color */
+}
+
+.fa-wind {
+    font-size: 30px;
+    color: #898989; /* Wind icon color */
+}
+
+.col-sm {
+    text-align: center;
+}
+
+.col-sm .active {
+    color: black;
+    cursor: default;
+    text-decoration: underline; /* Underline active items */
+}
+
+.weather-forecast {
+    margin-top: 30px; /* Increased margin for spacing */
+    text-align: center;
+}
+
+.weather-forecast-date {
+    font-size: 16px;
+    color: #555; /* Darker for better visibility */
+    opacity: 0.8; /* Slightly darker for contrast */
+}
+
+.weather-forecast-temperature-min {
+    opacity: 0.6;
+    color: #2c3e50; /* Darker color for better emphasis */
+}
+
+.weather-forecast-temperature {
+    font-size: 14px;
+    color: #333; /* Darker text color */
+}
