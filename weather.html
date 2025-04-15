@@ -1,190 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>Wireframe 🌤</title>
     <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
-        rel="stylesheet"
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
     />
-    <title>🌸 Weather App 🌸</title>
-    <style>
-        body {
-            background-color: #f8e6f3;
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 20px;
-        }
+    <script
+      src="https://kit.fontawesome.com/a79f7282ef.js"
+      crossorigin="anonymous"
+    ></script>
 
-        .weather-app {
-            max-width: 600px;
-            margin: 0 auto;
-            border-radius: 10px;
-            background-color: #fff;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-        }
-
-        header {
-            text-align: center;
-        }
-
-        .search-form {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        .search-form-input {
-            width: 200px;
-            padding: 10px;
-            border: 2px solid #f05a28;
-            border-radius: 5px;
-            margin-right: 10px;
-        }
-
-        .search-form-button {
-            padding: 10px 20px;
-            background-color: #f05a28;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .search-form-button:hover {
-            background-color: #d44f1f;
-        }
-
-        .weather-app-data {
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        .weather-app-city {
-            font-size: 28px;
-            font-weight: 700;
-            margin: 0;
-        }
-
-        .weather-app-details {
-            font-size: 16px;
-            margin: 10px 0;
-        }
-
-        .weather-app-temperature-container {
-            display: flex;
-            align-items: baseline;
-            justify-content: center;
-        }
-
-        .weather-app-temperature {
-            font-size: 48px;
-            font-weight: 500;
-            margin: 0 10px;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 14px;
-        }
-
-        a {
-            color: #f05a28;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <link rel="stylesheet" href="wstyle.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-</head>
-
-<body>
-    <div class="weather-app">
-        <header>
-            <h1>🌸 Welcome to the Weather App! 🌸</h1>
-            <form class="search-form" id="search-form">
-                <input
-                    type="search"
-                    placeholder="Enter a city.."
-                    required
-                    id="search-form-input"
-                    class="search-form-input"
-                />
-                <input type="submit" value="Search" class="search-form-button" />
-            </form>
-        </header>
-        <main>
-            <div class="weather-app-data">
-                <div>
-                    <h1 class="weather-app-city" id="city"></h1>
-                    <p class="weather-app-details">
-                        <span id="time"></span>, <span id="description"></span><br />
-                        Humidity: <strong id="humidity"></strong>, Wind:
-                        <strong id="wind-speed"></strong> km/h
-                    </p>
-                </div>
-                <div class="weather-app-temperature-container">
-                    <div id="icon"></div>
-                    <div class="weather-app-temperature" id="temperature"></div>
-                    <div class="weather-app-unit">°C</div>
-                </div>
+  </head>
+  <body>
+    <div class="container">
+      <div class="weather-app">
+      <div class="row">
+        <div class="col-9">
+          <form class="search-form" id="search-form">
+            <div class="row">
+              <div class="col-9">
+            <input
+              type="search"
+              id="search-city"
+              class="form-control"
+              placeholder="Enter your city"
+            />
             </div>
-            <div class="weather-forecast" id="forecast"></div>
-        </main>
-
-        <footer>
-            This lovely project was coded with ❤️ by <strong>Katlego Seiphemo</strong>. 
-        </footer>
+            <div class="col-3">
+            <input type="submit" value="Search" class="btn btn-primary mb-2 w-100" />
+          </div>
+          </div>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <h1 class="city" id="now-city"></h1>
+          <p id="currentDate"></p>
+          <p id="currentTime"></p>
+          <br />
+          <img src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png" id="icon"></i>
+          <p id="description"></p>
+          <a class="number" id="temperature"></a>
+          <span class="units">°F</span>
+          <p class="info">
+            Humidity: <span id="humidity">0</span>%
+            <br />
+            Wind: <span id="wind"></span>mph
+          </p>
+      <div class="weather-forecast" id="forecast">
     </div>
-    <script>
-        const apiKey = "YOUR_API_KEY"; // Replace with your actual OpenWeatherMap API key
-
-        document.getElementById('search-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const city = document.getElementById('search-form-input').value;
-            fetchWeatherData(city);
-        });
-
-        function fetchWeatherData(city) {
-            const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
-            axios.get(url)
-                .then(response => {
-                    const weatherData = response.data;
-                    displayWeatherData(weatherData);
-                })
-                .catch(error => {
-                    console.error('Error fetching the weather data:', error);
-                    alert('Could not fetch weather data. Please check the city name and try again.');
-                });
-        }
-
-        function displayWeatherData(data) {
-            const city = data.name;
-            const description = data.weather[0].description;
-            const temperature = data.main.temp;
-            const humidity = data.main.humidity;
-            const windSpeed = data.wind.speed;
-            const iconCode = data.weather[0].icon;
-
-            // Update the HTML with the fetched weather data
-            document.getElementById('city').innerText = city;
-            document.getElementById('description').innerText = description;
-            document.getElementById('temperature').innerText = temperature.toFixed(1);
-            document.getElementById('humidity').innerText = humidity;
-            document.getElementById('wind-speed').innerText = windSpeed;
-            document.getElementById('time').innerText = new Date().toLocaleString();
-            document.getElementById('icon').innerHTML = `<img src="http://openweathermap.org/img/wn/${iconCode}@2x.png" alt="${description}" />`;
-        }
-    </script>
-</body>
+    </div>
+  </div>
+  </div>
+   <small>
+          <a
+            href="https://github.com/karinahuizar/weather-app"
+            target="_blank"
+            >Open-source code</a
+          >
+          by Karina Huizar
+        </small>
+        </div>
+    <script src="weather.js"></script>
+  </body>
 </html>
